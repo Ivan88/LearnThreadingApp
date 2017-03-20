@@ -9,11 +9,17 @@ namespace LearnThreadingApp
 {
 	class Program
 	{
+		static int x;
+		static object locker = new object();
+
 		static void Main(string[] args)
 		{
-			var counter = new Counter(6, 4);
-			var thread = new Thread(counter.Count);
-			thread.Start();
+			for (int i = 0; i < 5; i++)
+			{ 
+				var thread = new Thread(CountShareble);
+				Console.WriteLine("Starting thread #" + (i+1));
+				thread.Start();
+			}
 			Console.Read();
 		}
 
@@ -82,6 +88,25 @@ namespace LearnThreadingApp
 					Console.WriteLine(x * y);
 					Thread.Sleep(500);
 				}
+			}
+		}
+
+		public static void CountShareble()
+		{
+			Monitor.Enter(locker);
+			try
+			{
+				x = 1;
+				for (int i = 1; i < 9; i++)
+				{
+					Console.WriteLine("{0}: {1}", Thread.CurrentThread.Name, x);
+					x++;
+					Thread.Sleep(100);
+				}
+			}
+			finally
+			{
+				Monitor.Exit(locker);
 			}
 		}
 	}
