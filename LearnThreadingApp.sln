@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnThreadingApp", "LearnThreadingApp\LearnThreadingApp.csproj", "{81DC5608-51DC-4A80-ACC9-F69D4EA569F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutextTestApplication", "MutextTestApplication\MutextTestApplication.csproj", "{886FD8A1-50CE-49A3-A8C7-D51996FE52D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreTestApplication", "SemaphoreTestApplication\SemaphoreTestApplication.csproj", "{375C75DA-6917-46B3-BEF2-87DF7038FFA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{81DC5608-51DC-4A80-ACC9-F69D4EA569F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DC5608-51DC-4A80-ACC9-F69D4EA569F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DC5608-51DC-4A80-ACC9-F69D4EA569F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886FD8A1-50CE-49A3-A8C7-D51996FE52D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886FD8A1-50CE-49A3-A8C7-D51996FE52D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886FD8A1-50CE-49A3-A8C7-D51996FE52D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886FD8A1-50CE-49A3-A8C7-D51996FE52D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375C75DA-6917-46B3-BEF2-87DF7038FFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375C75DA-6917-46B3-BEF2-87DF7038FFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375C75DA-6917-46B3-BEF2-87DF7038FFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375C75DA-6917-46B3-BEF2-87DF7038FFA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

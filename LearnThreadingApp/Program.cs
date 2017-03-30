@@ -11,12 +11,14 @@ namespace LearnThreadingApp
 	{
 		static int x;
 		static object locker = new object();
+		static AutoResetEvent waitHandler = new AutoResetEvent(false);
+		static Mutex mu = new Mutex();
 
 		static void Main(string[] args)
 		{
 			for (int i = 0; i < 5; i++)
-			{ 
-				var thread = new Thread(CountShareble);
+			{
+				var thread = new Thread(MutexTest);
 				Console.WriteLine("Starting thread #" + (i+1));
 				thread.Start();
 			}
@@ -108,6 +110,32 @@ namespace LearnThreadingApp
 			{
 				Monitor.Exit(locker);
 			}
+		}
+
+		public static void AutoResetEventTest()
+		{
+			waitHandler.WaitOne();
+			x = 1;
+			for (int i = 1; i < 9; i++)
+			{
+				Console.WriteLine("{0}: {1}", Thread.CurrentThread.Name, x);
+				x++;
+				Thread.Sleep(100);
+			}
+			waitHandler.Set();
+		}
+
+		public static void MutexTest()
+		{
+			mu.WaitOne();
+			x = 1;
+			for (int i = 1; i < 9; i++)
+			{
+				Console.WriteLine("{0}: {1}", Thread.CurrentThread.Name, x);
+				x++;
+				Thread.Sleep(100);
+			}
+			mu.ReleaseMutex();
 		}
 	}
 }
